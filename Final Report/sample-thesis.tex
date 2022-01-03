@@ -1,0 +1,93 @@
+\documentclass[]{unswthesis}
+%%% Class options:
+
+%  undergrad (default)
+%  hdr
+
+%  11pt (default)
+%  12pt
+
+%  final (default)
+%  draft
+
+%  oneside (default for hdr)
+%  twoside (default for undergrad)
+
+
+%% Thesis details
+\thesistitle{Deep learning approaches for managing falls in aged care facilities}
+\thesisschool{School of Computer Science and Engineering}
+\thesisauthor{Abanob Tawfik}
+\thesisZid{z5075490}
+%\thesistopic{XX00}  % for undergrad theses only
+\thesisdegree{Bachelor of Engineering in Software Engineering}
+%\thesisdegree{Doctor of Philosophy}
+\thesisdate{April 2021}
+\thesissupervisor{Dr.\ Reza Argha}% for undergrad theses only
+
+
+%% My own LaTeX macros, definitions, etc
+\include{definitions}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage[justification=centering]{caption}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{subfig}
+\usepackage[font=small,labelfont=bf]{caption} % Required for specifying captions to tables and figures
+\usepackage{placeins}
+\usepackage{float}
+\usepackage{enumitem}
+\usepackage{comment}
+\usepackage[hmarginratio=1:1]{geometry}
+\setlength{\oddsidemargin}{5mm} \setlength{\evensidemargin}{5mm}
+\usepackage{amsmath,amssymb}
+
+\setcounter{tocdepth}{5}
+\setcounter{secnumdepth}{5}
+
+\raggedbottom
+
+\newenvironment{mycenter}[1][\topsep]
+  {\setlength{\topsep}{#1}\par\kern\topsep\centering}% \begin{mycenter}[<len>]
+  {\par\kern\topsep}% \end{mycenter}
+\setlength{\parindent}{0pt}% Just for this MWE
+
+\setlength{\tabcolsep}{6pt}     % General space between columns (6pt standard)
+\renewcommand{\arraystretch}{1.5} % General space between rows (1 standard)
+
+\urlstyle{same}
+
+\begin{document}
+
+%% pages in the ``frontmatter'' section have roman numeral page number
+\frontmatter  
+\maketitle
+
+\include{abstract}
+\include{acknowledgements}
+\include{abbreviations}
+\tableofcontents
+\listoffigures  % if required
+\listoftables  % if required
+\let\cleardoublepage=\clearpage
+
+%% pages in the ``mainmatter'' section have arabic page numbers and chapters are numbered
+\mainmatter
+
+\include{introduction}
+\include{background}
+\include{mywork}
+\include{evaluation}
+\include{conclusion}
+
+%% chapters in the ``backmatter'' section do not have chapter numbering
+%% text in the ``backmatter'' is single spaced
+\backmatter
+\include{bibliography}
+
+\include{appendix1}
+%\include{appendix2}
+
+\end{document}

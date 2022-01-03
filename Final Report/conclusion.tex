@@ -1,0 +1,16 @@
+\chapter{Conclusion}\label{ch:conclusion}
+
+This report has outlined the motivation and implications of a fall detection system using semi-supervised learning. A plan was made to develop this system in a flexible and maintainable manner. The pipeline created lays the groundwork for any future work, the only change needed is in the dataset itself. Despite poor results when determining model accuracy, this is likely attributed to a poor dataset. The model developed has a major impact in the field of fall detection, in that it does not require fall data to get better. Due to the semi-supervised nature of this learning, we can classify falls without having ever trained on one.
+
+\section{Future Work}
+
+Moving forward, there are many directions in which this project can be taken. However, before any further work is done, there are immediate changes that must happen moving forward. 
+
+\begin{itemize}
+    \item \textbf{Target Tracking Algorithms:} The current data issues can be attributed to the target tracking performed by the mmWave sensor. The sensor itself has built-in algorithms and processes to track targets and classify noise. It is quite evident that these algorithms aren't perfect, and further data pre-processing algorithms should be performed to accurately track the target and classify noise. 
+    \item \textbf{Convolutional layers in autoencoder:} In contrast to using raw mmWave data, occupancy grids can be created using frame data and passed into the variational autoencoder through convolutional layers. This model can be directly compared to the current model.
+    \item \textbf{Feature extraction:} Using a 3D CNN and occupancy grids to perform automatic feature extraction. These extracted features can be connected to the variational autoencoder. This model can also be directly compared to the current model.   
+    \item \textbf{Realtime:} Model reads in a set of frames in real-time and performs prediction. Currently, all the groundwork is there, all that needs to be done is live pre-processing on incoming frames and passing them through the saved model. This however should only be done when the model has been shown to work well.
+    \item \textbf{Azure Function alert:} System to send an alert to a chosen emergency contact upon detecting a fall. This would be done through an Azure function. Similair to real-time implementation, this should only be done when the model has been shown to work well.
+    \item \textbf{Fall Prevention:} During data cleaning, transition data is captured from activity A to activity B. This is done through a customisable python script, where the last x frames of activity A are combined with the first x frames of activity B (x is a customisable hyperparameter). Using this transition data for training fall prevention can be looked into.    
+\end{itemize}

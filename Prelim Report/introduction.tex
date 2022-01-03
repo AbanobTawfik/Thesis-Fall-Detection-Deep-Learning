@@ -1,0 +1,18 @@
+\chapter{Introduction}\label{ch:intro}
+
+Falls are the second leading cause of accidental injury deaths worldwide, where each year, an estimated 646,000 individuals die from falls globally [1]. This has led to the need for fall detection-based systems to provide an immediate response; however, current methods in place all come with drawbacks. 
+
+Phone-based and smartwatch-based fall detection have risen in popularity. However, in research conducted by \textit{Luque et al.} [2], it was shown that the rate of battery consumption while running complex algorithms was a major drawback. These methods also place responsibility on the individual by making sure they always have their devices on them at all times, and that these devices are charged.
+
+Camera-based fall detection has been another popular choice for fall detection, especially with the prominence of convolutional neural networks (CNN). Unfortunately these methods are supervised learning techniques that require a large amount of data. Real fall data is often unacquariable, as shown in research by \textit{Khan et al.} [3]; falls are rare events, and simulated falls don't encapsulate all aspects of a natural fall.
+
+Privacy concerns also arise when it comes to camera-based fall detection. Data required for camera-based fall detection tend to be a sequence of frames that are stored in video form. This effectively puts individuals under constant surveillance where some third party is storing their activity data. [5] It was shown that one of the most significant drawbacks of camera-based recognition is the central public opinion that this technology causes a threat to individual privacy.
+
+Currently, the biggest issue in fall detection technology using Machine Learning has been the collection of usable data. Research performed by \textit{Schwickert et al.} [4] has shown that 94\% of data gathered for supervised learning techniques and validating models for semi-supervised learning techniques has been done through the use of simulated falls. Amongst this, according to research by \textit{Khan et al.} [3], there is still no standard for fall detection that has been shown to perform consistently well.
+
+Due to these issues, this thesis aims to develop a deep learning-based model to detect human activities and identify falls as anomalies using mmWave sensors while maintaining personal privacy. The model developed during this thesis will also run in real-time to detect falls and alert an individual upon detection. If this model performs at a high specificity in real-time with a low count of false alarms, then this will be taken to facilities in VitalCare for use.  
+
+Chapter~\ref{ch:background} sets out to explain in further detail; the motivation behind the topic choice, previous work conducted relating to fall detection, the reasoning behind mmWave sensors, and describe the problem statement. 
+Chapter~\ref{ch:style} sets out to describe structured requirements, use cases of the system, and the intended design and structure of the final model.
+Chapter~\ref{ch:eval} sets out to outline work that was performed during this term so far and the project timeline and scheduling for Thesis part B \& C. 
+
